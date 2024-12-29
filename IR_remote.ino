@@ -20,7 +20,6 @@
 ﻿#include <avr/io.h>
 ﻿
 ﻿volatile int count=0;
-﻿volatile unsigned int measure = 0;
 ﻿
 ﻿// IR transmitter **********************************************
 ﻿
