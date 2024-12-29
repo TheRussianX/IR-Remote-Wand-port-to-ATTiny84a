@@ -1,6 +1,8 @@
 ﻿/* IR Remote Wand
 ﻿  Ported to ATTiny84a
 ﻿  Set MCU at 1MHz
+  The IR LED is on PA6 - Pin 6 for Arduino
+  The status LED is on PA0
 ﻿*/
 ﻿//#warning "This is the CLOCKWISE pin mapping - make sure you're using the pinout diagram with the pins in clockwise order"
 ﻿//               ATMEL ATTINY84 / ARDUINO
@@ -8,7 +10,7 @@
 ﻿//                       +-\/-+
 ﻿//                VCC  1|      |14  GND
 ﻿//        (D 10)  PB0  2|      |13  PA0  (D  0)        AREF
-﻿//        (D  9)  PB1  3|       |12  PA1  (D  1)
+﻿//        (D  9)  PB1  3|      |12  PA1  (D  1)
 ﻿//        (D 11)  PB3  4|      |11  PA2  (D  2)
 ﻿//  PWM   (D  8)  PB2  5|      |10  PA3  (D  3)
 ﻿//  PWM   (D  7)  PA7  6|      |9   PA4  (D  4)
