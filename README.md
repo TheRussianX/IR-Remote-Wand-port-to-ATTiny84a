@@ -1,4 +1,4 @@
-Calibrate the internal oscillator (find the OSCCAL value for your MCU) and change the value in the code!
+Calibrate the internal oscillator (find the OSCCAL value for your MCU and change the value in the code)!
 
 This is a port to ATTiny84a of the project IR Remote Wand v2 - see http://www.technoblogy.com/show?25TN
 originally by David Johnson-Davies - www.technoblogy.com - 13th May 2018 for ATTiny85.
