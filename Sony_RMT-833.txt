@@ -1,0 +1,26 @@
+Sony RMT-833
+
+Rec - Protocol=Sony Address=0xB9 Command=0x19 Repeat gap=19350us Raw-Data=0x5C99 15 bits LSB first
+Zoom In - Protocol=Sony Address=0xD9 Command=0x1A Repeat gap=19350us Raw-Data=0x6C9A 15 bits LSB first
+Zoom Out - Protocol=Sony Address=0xD9 Command=0x1B Repeat gap=18750us Raw-Data=0x6C9B 15 bits LSB first
+Display - Protocol=Sony Address=0x7 Command=0x5A Repeat gap=23550us Raw-Data=0x3DA 12 bits LSB first
+
+Play - Protocol=Sony Address=0x7 Command=0x1A Repeat gap=24100us Raw-Data=0x39A 12 bits LSB first
+Stop - Protocol=Sony Address=0x7 Command=0x18 Repeat gap=24700us Raw-Data=0x398 12 bits LSB first
+Rewind - Protocol=Sony Address=0x7 Command=0x1B Repeat gap=23550us Raw-Data=0x39B 12 bits LSB first
+Fast Forward - Protocol=Sony Address=0x7 Command=0x1C Repeat gap=24150us Raw-Data=0x39C 12 bits LSB first
+
+Usage: Send with: IrSender.sendSony(0xB9, 0x19, <numberOfRepeats>); Aparent repeta comanda de 4 sau 5 ori
+--------------------------------------------
+Pause - Protocol=Sony Address=0x7 Command=0x19 Repeat gap=24100us Raw-Data=0x399 12 bits LSB first
+Slow - Protocol=Sony Address=0x7 Command=0x23 Repeat gap=24150us Raw-Data=0x3A3 12 bits LSB first
+
+Protocol Sony (SIRC)
+Frequency 40KHz
+Header 2.4ms Pulse + 0.6ms Gap
+Bit 0 : 0.6ms Pulse + 0.6ms Gap
+Bit 1: 1.2ms Pulse + 0.6ms Gap
+
+For each button press you must send 5 commands, with a gap of 19350 microseconds
+
+Commands are repeated every 45ms(measured from start to start) for as long as the key on the remote control is held down

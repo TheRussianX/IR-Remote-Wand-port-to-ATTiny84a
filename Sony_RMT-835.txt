@@ -1,0 +1,102 @@
+Sony RMT-835
+
+Rec
+0000110 0101111000000
+number of bits:20
+Raw command: 0x3D30
+Device (13 bits): 0x7A
+Command (7 bits): 0x30
+
+Zoom In
+0101100 10011011
+number of bits:15
+Raw command: 0x6C9A
+Device (8 bits): 0xD9
+Command (7 bits): 0x1A
+
+Zoom Out
+1101100 10011011
+number of bits:15
+Raw command: 0x6C9B
+Device (8 bits): 0xD9
+Command (7 bits): 0x1B
+
+Play
+0100110 0101101000100
+number of bits:20
+Raw command: 0x22D32
+Device (13 bits): 0x45A
+Command (7 bits): 0x32
+
+Pause
+1001110 0101101000100
+number of bits:20
+Raw command: 0x22D39
+Device (13 bits): 0x45A
+Command (7 bits): 0x39
+
+Stop
+0001110 0101101000100
+number of bits:20
+Raw command: 0x22D38
+Device (13 bits): 0x45A
+Command (7 bits): 0x38
+
+Enter
+1101000 0101101000100
+number of bits:20
+Raw command: 0x22D0B
+Device (13 bits): 0x45A
+Command (7 bits): 0xB
+
+Up
+1001111 0101101000100
+number of bits:20
+Raw command: 0x22D79
+Device (13 bits): 0x45A
+Command (7 bits): 0x79
+
+Down
+0101111 0101101000100
+number of bits:20
+Raw command: 0x22D7A
+Device (13 bits): 0x45A
+Command (7 bits): 0x7A
+
+Right
+0011111 0101101000100
+number of bits:20
+Raw command: 0x22D7C
+Device (13 bits): 0x45A
+Command (7 bits): 0x7C
+
+Left
+1101111 0101101000100
+number of bits:20
+Raw command: 0x22D7B
+Device (13 bits): 0x45A
+Command (7 bits): 0x7B
+
+End
+1000110 0101101000100
+number of bits:20
+Raw command: 0x22D31
+Device (13 bits): 0x45A
+Command (7 bits): 0x31
+
+Begin
+0000110 0101101000100
+number of bits:20
+Raw command: 0x22D30
+Device (13 bits): 0x45A
+Command (7 bits): 0x30
+
+Protocol Sony (SIRC)
+Frequency 40KHz
+Header 2.4ms Pulse + 0.6ms Gap
+Bit 0 : 0.6ms Pulse + 0.6ms Gap
+Bit 1: 1.2ms Pulse + 0.6ms Gap
+
+For each button press you must send 5 commands, with a gap of 19350 microseconds
+
+Commands are repeated every 45ms(measured from start to start) for as long as the key on the remote control is held down

@@ -1,0 +1,86 @@
+Panasonic N2QAEC000023
+
+Rec - Protocol=Panasonic Address=0x287 Command=0xCC Repeat gap=73600us Raw-Data=0x94CC2870 48 bits LSB first
+Zoom In - Protocol=Panasonic Address=0x287 Command=0x62 Repeat gap=73650us Raw-Data=0x3A622870 48 bits LSB first
+Zoom Out - Protocol=Panasonic Address=0x287 Command=0x63 Repeat gap=73650us Raw-Data=0x3B632870 48 bits LSB first
+ExtDisplay - Protocol=Panasonic Address=0x287 Command=0x57 Repeat gap=73600us Raw-Data=0xF572870 48 bits LSB first
+
+Stop - Protocol=Panasonic Address=0x287 Command=0x0 Repeat gap=73650us Raw-Data=0x58002870 48 bits LSB first
+Enter - Protocol=Panasonic Address=0x287 Command=0x58 Repeat gap=73650us Raw-Data=0x582870 48 bits LSB first
+Left - Protocol=Panasonic Address=0x297 Command=0xD3 Repeat gap=73600us Raw-Data=0x8AD32970 48 bits LSB first
+Right - Protocol=Panasonic Address=0x297 Command=0xD2 Repeat gap=73650us Raw-Data=0x8BD22970 48 bits LSB first
+
+
+Example Send ZoomOut - IrSender.sendPanasonic(0x287, 0x63, <numberOfRepeats>);
+------------------------------------------------------------------------------------
+Photo Shot - Protocol=Panasonic Address=0x287 Command=0x66 Repeat gap=73650us Raw-Data=0x3E662870 48 bits LSB first
+Date/Time - Protocol=Panasonic Address=0x287 Command=0x67 Repeat gap=73600us Raw-Data=0x3F672870 48 bits LSB first
+Play - Protocol=Panasonic Address=0x287 Command=0xA Repeat gap=73650us Raw-Data=0x520A2870 48 bits LSB first
+Rewind - Protocol=Panasonic Address=0x287 Command=0x2 Repeat gap=73600us Raw-Data=0x5A022870 48 bits LSB first
+Fast Forward - Protocol=Panasonic Address=0x287 Command=0x3 Repeat gap=73650us Raw-Data=0x5B032870 48 bits LSB first
+Still Adv Back - Protocol=Panasonic Address=0x287 Command=0x7 Repeat gap=73650us Raw-Data=0x5F072870 48 bits LSB first
+Still Adv Forward - Protocol=Panasonic Address=0x287 Command=0xF Repeat gap=73650us Raw-Data=0x570F2870 48 bits LSB first
+Skip Back - Protocol=Panasonic Address=0x287 Command=0x49 Repeat gap=73650us Raw-Data=0x11492870 48 bits LSB first
+Skip Forward - Protocol=Panasonic Address=0x287 Command=0x4A Repeat gap=73650us Raw-Data=0x124A2870 48 bits LSB first 
+Up - Protocol=Panasonic Address=0x297 Command=0xD0 Repeat gap=73650us Raw-Data=0x89D02970 48 bits LSB first
+Down - Protocol=Panasonic Address=0x297 Command=0xD1 Repeat gap=73650us Raw-Data=0x88D12970 48 bits LSB first
+Delete - Protocol=Panasonic Address=0x287 Command=0x70 Repeat gap=73650us Raw-Data=0x28702870 48 bits LSB first
+Menu - Protocol=Panasonic Address=0x287 Command=0x56 Repeat gap=73600us Raw-Data=0xE562870 48 bits LSB first
+
+Frequency 37KHz
+One time unit is aprox. 0.432 ms; U = 0.432 ms (or 0.32ms in Japanese Code) echivalent cu 16 pulsatii High
+Header: 8U Pulse + 4U Gap
+Bit 0 : 1U Pulse + 1U Gap
+Bit 1 : 1U Pulse + 3U Gap
+LSB sequence in each byte
+
+The device responds at one message.
+
+Repeat command after gap=73650us
+
+Raw Codes
+
+The codes are sent from right to left (LSB)
+
+Rec
+ +3500-1700
+ + 450  010000000000010000001110000101000011001100101001
+       
+0x94CC28702002  raw_code
+0x94CC28 0x702002  raw_code1 raw_code2 
+
+Zoom In
+ +3450-1700
+ + 450  010000000000010000001110000101000100011001011100
+0x3A6228702002
+0x3A6228 0x702002
+
+Zoom Out
+ +3500-1700
+ + 450  010000000000010000001110000101001100011011011100
+0x3B6328 0x702002
+
+Ext Display
+ +3500-1700
+ + 450  010000000000010000001110000101001110101011110000
+0xF5728 0x702002
+
+Enter
+ +3500-1700
+ + 450  010000000000010000001110000101000001101000000000
+0x5828 0x702002
+
+Stop
+ +3500-1750
+ + 400  010000000000010000001110000101000000000000011010
+0x580028 0x702002
+
+Left
++3450-1750
+ + 400  010000000000010000001110100101001100101101010001
+0x8AD329 0x702002
+
+Right
+ +3500-1700
+ + 450  010000000000010000001110100101000100101111010001
+0x8BD229 0x702002

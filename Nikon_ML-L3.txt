@@ -1,0 +1,29 @@
+Protocol Nikon
+Frecventa 38.4KHz
+Message length 3 bits
+
+Header: 5U Pulse + 70U Gap
+Bit 0: 1U Pulse + 4U Gap
+Bit 1: 1U Pulse + 9U Gap
+
+Header: 2ms Pulse + 28ms Gap
+Bit 0: 0.4ms Pulse + 1.6ms Gap
+Bit 1: 0.4ms Pulse + 3.6ms Gap
+
+1U = 400 microSec
+
+Message: header + 011 -->for LSB 0x6
+         header + 010 --> for LSB 0x2, untested!  
+The message is sent twice!
+
+Raw:
+
+ +2000 -27300
+ + 400,-1550
+ + 450,-3500 + 450
+
+-----------------------------------
+
+ +2000 -27300
+ + 450,-1550
+ + 400,-3550 + 400

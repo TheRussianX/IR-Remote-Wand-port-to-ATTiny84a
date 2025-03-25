@@ -1,0 +1,97 @@
+Canon WLD88
+
+Rec - Protocol=NEC2 Address=0xE383 Command=0x3 Repeat gap=39800us Raw-Data=0xFC03E383 32 bits LSB first
+Zoom In - Protocol=NEC2 Address=0xE383 Command=0x1C Repeat gap=39800us Raw-Data=0xE31CE383 32 bits LSB first
+Zoom Out - Protocol=NEC2 Address=0xE383 Command=0x1D Repeat gap=39800us Raw-Data=0xE21DE383 32 bits LSB first
+Disp - Protocol=NEC2 Address=0xE383 Command=0x4E Repeat gap=39800us Raw-Data=0xB14EE383 32 bits LSB first
+
+Set - Protocol=NEC2 Address=0xE383 Command=0x24 Repeat gap=39800us Raw-Data=0xDB24E383 32 bits LSB first
+Stop - Protocol=NEC2 Address=0xE383 Command=0x17 Repeat gap=39750us Raw-Data=0xE817E383 32 bits LSB first
+Left - Protocol=NEC2 Address=0xE383 Command=0x23 Repeat gap=39750us Raw-Data=0xDC23E383 32 bits LSB first
+Right - Protocol=NEC2 Address=0xE383 Command=0x22 Repeat gap=39750us Raw-Data=0xDD22E383 32 bits LSB first
+
+Usage:
+Send with: IrSender.sendNEC(0xE383, 0x3, <numberOfRepeats>);
+------------------------------
+Photo - Protocol=NEC2 Address=0xE383 Command=0x30 Repeat gap=39750us Raw-Data=0xCF30E383 32 bits LSB first
+Func - Protocol=NEC2 Address=0xE383 Command=0x46 Repeat gap=39800us Raw-Data=0xB946E383 32 bits LSB first
+Menu - Protocol=NEC2 Address=0xE383 Command=0x25 Repeat gap=39800us Raw-Data=0xDA25E383 32 bits LSB first
+Playlist - Protocol=NEC2 Address=0xE383 Command=0x48 Repeat gap=39750us Raw-Data=0xB748E383 32 bits LSB first
+Up - Protocol=NEC2 Address=0xE383 Command=0x20 Repeat gap=39800us Raw-Data=0xDF20E383 32 bits LSB first
+Down - Protocol=NEC2 Address=0xE383 Command=0x21 Repeat gap=39800us Raw-Data=0xDE21E383 32 bits LSB first
+Still adv left - Protocol=NEC2 Address=0xE383 Command=0x50 Repeat gap=39800us Raw-Data=0xAF50E383 32 bits LSB first
+Still adv right - Protocol=NEC2 Address=0xE383 Command=0x10 Repeat gap=39800us Raw-Data=0xEF10E383 32 bits LSB first
+Rewind - Protocol=NEC2 Address=0xE383 Command=0x4B Repeat gap=39800us Raw-Data=0xB44BE383 32 bits LSB first
+Play - Protocol=NEC2 Address=0xE383 Command=0x1 Repeat gap=39750us Raw-Data=0xFE01E383 32 bits LSB first
+Fast Forward - Protocol=NEC2 Address=0xE383 Command=0x4D Repeat gap=39750us Raw-Data=0xB24DE383 32 bits LSB first
+Pause - Protocol=NEC2 Address=0xE383 Command=0x4 Repeat gap=39800us Raw-Data=0xFB04E383 32 bits LSB first
+
+
+Protocol NEC:
+Frquency 38KHz
+Header:  a 9ms leading pulse burst + a 4.5ms space (16U pulse 8U gap)
+Bitul 0 : a 562.5µs pulse burst followed by a 562.5µs space, with a total transmit time of 1.125ms (1U pulse 1U gap)
+Bitul 1 : a 562.5µs pulse burst followed by a 1.6875ms space, with a total transmit time of 2.25ms (1U pulse 3U gap)
+Ending: a final 562.5µs pulse burst to signify the end of message transmission
+
+The device reacts to every single command. Repeat the command after gap=39850 microseconds
+
+The four bytes of data bits are each sent least significant bit first
+
+Canon Raw NEC 32bit
+
+Rec
+
+ +8900-4450
+ + 550   11000001110001111100000000111111
+0xFC03E383
+0xFC03 0xE383
+
+Zoom In
+
+ +8900-4400
+ + 600   11000001110001110011100011000111
+0xE31CE383
+0xE31C 0xE383  raw_code1 raw_code2
+
+Zoom Out
+
+ +8900-4400
+ + 600   11000001110001111011100001000111
+0xE21DE383
+0xE21D 0xE383
+
+Display
+
+ +8900-4450
+ + 550   11000001110001110111001010001101
+0xB14EE383
+0xB14E 0xE383
+
+Set/Enter
+
+ +8900-4400
+ + 600   11000001110001110010010011011011
+0xDB24E383
+0xDB24 0xE383
+
+Stop
+
+ +8900-4400
+ + 600   11000001110001111110100000010111
+0xE817E383
+0xE817 0xE383
+
+Left
+
+ +8900-4400
+ + 600   11000001110001111100010000111011
+0xDC23E383
+0xDC23 0xE383
+
+Right
+
+ +8900-4450
+ + 550   11000001110001110100010010111011
+0xDD22E383
+0xDD22 0xE383
