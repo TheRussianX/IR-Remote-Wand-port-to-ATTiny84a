@@ -1,5 +1,5 @@
 Protocol Nikon
-Frecventa 38.4KHz
+Frequency 38.4KHz
 Message length 3 bits
 
 Header: 5U Pulse + 70U Gap
