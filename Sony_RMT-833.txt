@@ -5,6 +5,10 @@ Zoom In - Protocol=Sony Address=0xD9 Command=0x1A Repeat gap=19350us Raw-Data=0x
 Zoom Out - Protocol=Sony Address=0xD9 Command=0x1B Repeat gap=18750us Raw-Data=0x6C9B 15 bits LSB first
 Display - Protocol=Sony Address=0x7 Command=0x5A Repeat gap=23550us Raw-Data=0x3DA 12 bits LSB first
 
+Backlight - 0xD9 0x28 raw data 0x6CA8 15 bits
+Fast Zoom In - 0xD9 0x1C raw data 0x6C9C 15 bits
+Fast Zoom Out - 0xD9 0x1D raw data 0x6C9D 15 bits
+
 Play - Protocol=Sony Address=0x7 Command=0x1A Repeat gap=24100us Raw-Data=0x39A 12 bits LSB first
 Stop - Protocol=Sony Address=0x7 Command=0x18 Repeat gap=24700us Raw-Data=0x398 12 bits LSB first
 Rewind - Protocol=Sony Address=0x7 Command=0x1B Repeat gap=23550us Raw-Data=0x39B 12 bits LSB first
@@ -24,3 +28,11 @@ Bit 1: 1.2ms Pulse + 0.6ms Gap
 For each button press you must send 5 commands, with a gap of 19350 microseconds
 
 Commands are repeated every 45ms(measured from start to start) for as long as the key on the remote control is held down
+
+To convert codes from Address + Command to RAW, ex. from hifi-remote.com:
+
+0xD9 =  11011001 (address), put a 0 on the left side
+0x1A = 00011010 (command), take a 0 from the left side
+
+Raw 0+11011001(address)+(0)0011010(command) --> 0110110010011010 --> convert to hex --> 0x6C9A
+On hifi-remote.com the codes are written as MSB, not as LSB (the way are transmitted).
